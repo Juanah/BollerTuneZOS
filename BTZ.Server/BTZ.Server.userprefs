@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="BTZ.Server\BTZ.Server.csproj" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BTZ.Infrastructure\DataAccess\Repositories\IUserRepository.cs">
+    <Files>
+      <File FileName="BTZ.Infrastructure\DataAccess\DbEntities\User\Premission.cs" Line="1" Column="1" />
+      <File FileName="BTZ.DataAccess\DbEntities\User\User.cs" Line="15" Column="17" />
+      <File FileName="BTZ.DataAccess\DbEntities\Dashboard\BTZ\WallPost.cs" Line="2" Column="1" />
+      <File FileName="BTZ.DataAccess\DbEntities\Dashboard\Community\CWallPost.cs" Line="2" Column="1" />
+      <File FileName="BTZ.DataAccess\DbEntities\Media\Binary.cs" Line="5" Column="30" />
+      <File FileName="BTZ.DataAccess\DbEntities\BaseEntity.cs" Line="2" Column="1" />
+      <File FileName="BTZ.DataAccess\Core\DatabaseInitializer.cs" Line="21" Column="19" />
+      <File FileName="BTZ.Infrastructure\DataAccess\Repositories\IUserRepository.cs" Line="4" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
