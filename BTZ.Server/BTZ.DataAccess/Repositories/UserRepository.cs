@@ -8,12 +8,16 @@ using BTZ.Infrastructure;
 
 namespace BTZ.DataAccess
 {
+	/// <summary>
+	/// Datenzugriff auf die Nutzer
+	/// Jonas Ahlf 16.04.2015 10:27:32
+	/// </summary>
 	public class UserRepository: IUserRepository
 	{
 		readonly Context _context;
 		List<User> _localUser;
 		ILog s_log = LogManager.GetLogger(typeof(UserRepository));
-
+		/// <summary />
 		public UserRepository (Context _context)
 		{
 			this._context = _context;
@@ -22,6 +26,7 @@ namespace BTZ.DataAccess
 		
 
 		#region Get
+		/// <summary />
 		public List<User> GetAllUser()
 		{
 			if (!_localUser.Any ()) {
@@ -32,6 +37,7 @@ namespace BTZ.DataAccess
 		#endregion
 
 		#region Update
+		/// <summary />
 		public void UpdateUser(User user)
 		{
 			if (!_context.Update<User> (user)) {
@@ -42,6 +48,7 @@ namespace BTZ.DataAccess
 			s_log.Info (String.Format ("Updated User {0}", user.Username));
 
 		}
+		/// <summary />
 		public void UpdateUsers(IList<User> users)
 		{
 			foreach (var user in users) {
@@ -51,6 +58,7 @@ namespace BTZ.DataAccess
 		#endregion
 
 		#region Delete
+		/// <summary />
 		public void DeleteUser(User user)
 		{
 			if (!_context.Delete<User> (user)) {
@@ -60,6 +68,7 @@ namespace BTZ.DataAccess
 			UpdateUser ();
 			s_log.Info (String.Format ("Deleted User {0}", user.Username));
 		}
+		/// <summary />
 		public void DeleteUsers(IList<User> users)
 		{
 			foreach (var user in users) {
@@ -69,6 +78,7 @@ namespace BTZ.DataAccess
 		#endregion
 
 		#region Insert
+		/// <summary />
 		public void AddUser(User user)
 		{
 			if (!_context.Insert<User> (user)) {
@@ -78,6 +88,7 @@ namespace BTZ.DataAccess
 			UpdateUser ();
 			s_log.Info (String.Format ("Added User {0}", user.Username));
 		}
+		/// <summary />
 		public void AddUsers(IList<User> users)
 		{
 			foreach (var user in users) {

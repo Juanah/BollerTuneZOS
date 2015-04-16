@@ -7,7 +7,7 @@ namespace BTZ.Common
 	public class EntityMessage
 	{
 		[DataMember]
-		public EntityType Type{ get; set; }
+		public string Type{ get; set; }
 
 		[DataMember]
 		public string Entity{ get; set; }

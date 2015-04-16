@@ -34,17 +34,7 @@ namespace BTZ.Common
 		/// <value>The avatar.</value>
 		public byte[] Avatar{ get; set; }
 
-		public string PremissionStr{ get; set; }
-
-		/// <summary>
-		/// Berechtigung
-		/// </summary>
-		/// <value>The premission.</value>
-		[Ignore()]
-		public Premission Premission{ get{ return Premission; } set{
-				Premission = value;
-				PremissionStr = Premission.ToString ();
-			}} 
+		public string Token{ get; set; }
 	}
 }
 

@@ -2,13 +2,20 @@
 using BTZ.Communication;
 using BTZ.Common;
 using System.IO;
+using BTZ.Infrastructure;
+using Newtonsoft.Json;
+
 namespace BTZ.Core
 {
 	public class AppService : IAppService
 	{
+		ILogInMessageProcessor _loginMessageProcessor;
+
+
 		public AppService ()
 		{
 		}
+		
 
 		#region IAppService implementation
 
@@ -19,15 +26,34 @@ namespace BTZ.Core
 
 		public LoginResponse Login (Stream input, string token)
 		{
-			throw new NotImplementedException ();
+			StreamReader streamReader = new StreamReader(input);
+			string rawString = streamReader.ReadToEnd();
+			streamReader.Dispose();
+
+			if (String.IsNullOrEmpty (rawString)) {
+				return new LoginResponse (){ Success= false, Token = ""};
+			}
+
+			return _loginMessageProcessor.LoginUser (rawString);
 		}
 
 		public LoginResponse RegisterUser (Stream input, string token)
 		{
-			throw new NotImplementedException ();
+			StreamReader streamReader = new StreamReader(input);
+			string rawString = streamReader.ReadToEnd();
+			streamReader.Dispose();
+
+			if (String.IsNullOrEmpty (rawString)) {
+				return new LoginResponse (){ Success= false, Token = ""};
+			}
+
+			return _loginMessageProcessor.RegisterUser (rawString);
 		}
 
 		#endregion
+
+
+
 	}
 }
 
