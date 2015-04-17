@@ -10,6 +10,7 @@ namespace BTZ.Core
 		private WebServiceHost _appService;
 		private readonly ILog s_log = LogManager.GetLogger (typeof(BTZHosts));
 		Uri _appServiceUri;
+
 		public BTZHosts ()
 		{
 		}

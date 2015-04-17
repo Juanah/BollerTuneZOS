@@ -2,7 +2,8 @@
 using BTZ.Infrastructure;
 using BTZ.Common;
 using System.Linq;
-
+using BTZ.Data;
+using log4net;
 
 namespace BTZ.Core
 {
@@ -10,10 +11,15 @@ namespace BTZ.Core
 	{
 
 		private readonly IUserRepository _userRepository;
+		private readonly ILog s_log = LogManager.GetLogger(typeof(LoginManager));
 
-		public LoginManager (IUserRepository _userRepository)
+
+		public LoginManager ()
 		{
-			this._userRepository = _userRepository;
+			this._userRepository = TinyIoC.TinyIoCContainer.Current.Resolve<IUserRepository> ();
+			if (_userRepository == null) {
+				throw new ArgumentNullException ("UserRepository");
+			}
 		}
 		
 
@@ -44,14 +50,16 @@ namespace BTZ.Core
 		public User RegisterUser (LoginData loginData)
 		{
 			if (_userRepository.GetAllUser ().Any (n => n.Username.ToLower ().Equals (loginData.Username.ToLower ()))) {
+				s_log.Info (String.Format ("Multiple registration of user {0}, not allowed", loginData.Username));
 				return null;
 			}
 
 			User nUser = new User () {
 				Username = loginData.Username,
 				Password = loginData.Password,
-				Token = Guid.NewGuid().ToString()
+				Token = Guid.NewGuid().ToString(),
 			};
+			s_log.Info (String.Format ("User {0} Successfully registered", loginData.Username));
 
 			_userRepository.AddUser (nUser);
 

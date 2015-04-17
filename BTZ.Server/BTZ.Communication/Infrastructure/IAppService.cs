@@ -26,7 +26,7 @@ namespace BTZ.Communication
 			Method = "POST",
 			ResponseFormat = WebMessageFormat.Json,
 			BodyStyle = WebMessageBodyStyle.Bare,
-			UriTemplate = "/set/{token}")]
+			UriTemplate = "/login/{token}")]
 		LoginResponse Login(Stream input,string token);
 
 		[OperationContract]
@@ -34,7 +34,7 @@ namespace BTZ.Communication
 			Method = "POST",
 			ResponseFormat = WebMessageFormat.Json,
 			BodyStyle = WebMessageBodyStyle.Bare,
-			UriTemplate = "/set/{token}")]
+			UriTemplate = "/reg/{token}")]
 		LoginResponse RegisterUser(Stream input,string token);
 
 

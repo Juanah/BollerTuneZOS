@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BTZ.Common
+namespace BTZ.Data
 {
 	/// <summary>
 	/// gibt die einzelnen Stufen der Berechtigungen dar

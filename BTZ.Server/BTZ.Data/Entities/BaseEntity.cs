@@ -1,7 +1,7 @@
 ﻿using System;
 using MEF.Infrastructure;
 
-namespace BTZ.Common
+namespace BTZ.Data
 {
 	/// <summary>
 	/// Basisklasse aller Datenbankklassen

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTZ.Core", "BTZ.Core\BTZ.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTZ.Communication", "BTZ.Communication\BTZ.Communication.csproj", "{677E1B58-9146-4087-B9AC-96C44219A94F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTZ.Data", "BTZ.Data\BTZ.Data.csproj", "{A3374A6A-986D-4305-9A6E-4E4F6E1570E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +33,10 @@ Global
 		{677E1B58-9146-4087-B9AC-96C44219A94F}.Debug|x86.Build.0 = Debug|Any CPU
 		{677E1B58-9146-4087-B9AC-96C44219A94F}.Release|x86.ActiveCfg = Release|Any CPU
 		{677E1B58-9146-4087-B9AC-96C44219A94F}.Release|x86.Build.0 = Release|Any CPU
+		{A3374A6A-986D-4305-9A6E-4E4F6E1570E5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A3374A6A-986D-4305-9A6E-4E4F6E1570E5}.Debug|x86.Build.0 = Debug|Any CPU
+		{A3374A6A-986D-4305-9A6E-4E4F6E1570E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{A3374A6A-986D-4305-9A6E-4E4F6E1570E5}.Release|x86.Build.0 = Release|Any CPU
 		{AE9AA53D-62D8-4791-A58C-58525AD6A4EB}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{AE9AA53D-62D8-4791-A58C-58525AD6A4EB}.Debug|x86.Build.0 = Debug|Any CPU
 		{AE9AA53D-62D8-4791-A58C-58525AD6A4EB}.Release|x86.ActiveCfg = Release|Any CPU

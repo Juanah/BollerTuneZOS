@@ -3,9 +3,12 @@ namespace BTZ.Server
 {
 	class MainClass
 	{
+		static ServerStart _serverStart;
+
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+			_serverStart = new ServerStart ();
+			_serverStart.StartUp ();
 		}
 	}
 }

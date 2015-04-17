@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BTZ.Common
+namespace BTZ.Data
 {
 	public class Binary : BaseEntity
 	{

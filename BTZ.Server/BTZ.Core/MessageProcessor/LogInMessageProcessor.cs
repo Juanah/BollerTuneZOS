@@ -28,7 +28,7 @@ namespace BTZ.Core
 				return new LoginResponse (){Success = false, Token ="" };
 			}
 
-			var login = _loginManager.Login (request.loginData);
+			var login = _loginManager.Login (request);
 
 			return new LoginResponse (){ Success = login.Item2, Token = login.Item1 };
 		}
@@ -41,7 +41,7 @@ namespace BTZ.Core
 				return new LoginResponse (){Success = false, Token ="" };
 			}
 
-			var user = _loginManager.RegisterUser (request.loginData);
+			var user = _loginManager.RegisterUser (request);
 
 			return user == null ? new LoginResponse () {
 				Success = false,
@@ -54,14 +54,14 @@ namespace BTZ.Core
 
 		#endregion
 
-		LoginRequest toRequest(string js)
+		LoginData toRequest(string js)
 		{
 			if (String.IsNullOrEmpty (js)) {
 				s_log.Error ("Could not parse LoginRequest");
 				return null;
 			}
 
-			return JsonConvert.DeserializeObject<LoginRequest> (js);
+			return JsonConvert.DeserializeObject<LoginData> (js);
 		}
 	}
 }

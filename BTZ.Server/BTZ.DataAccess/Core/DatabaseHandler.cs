@@ -1,17 +1,17 @@
 ﻿using MEF.Infrastructure;
 using MEF.Core;
 using System.Collections.Generic;
-using BTZ.Common;
+using BTZ.Data;
 
 
 namespace BTZ.DataAccess
 {
-	public static class DatabaseInitializer
+	public class DatabaseHandler
 	{
-		private static IDBConnectionInfo _connectionInfo;
-		private static readonly EntityInitializer _initializer;
+		private IDBConnectionInfo _connectionInfo;
+		private readonly EntityInitializer _initializer;
 
-		static DatabaseInitializer ()
+		public DatabaseHandler ()
 		{
 			_connectionInfo  = new ConnectionInfo () {
 				Databasename = "bollertunezapp",
@@ -25,18 +25,22 @@ namespace BTZ.DataAccess
 		}
 
 
-		static void  InitializeEntities()
+		public void InitializeEntities()
 		{
 			var entityList = new List<IEntity> ();
 			entityList.Add (new User ());
 			entityList.Add (new Binary ());
 			entityList.Add (new CWallPost ());
 			entityList.Add (new WallPost ());
-			DbContext = _initializer.GetContext (entityList);
+			var context = _initializer.GetContext (entityList);
+			context.CreateDatabase ();
+			context.Parse ();
+			context.Create ();
+			DbContext = context;
 		}
 
 
-		public static Context DbContext{ get; private set; }
+		public Context DbContext{ get; private set;}
 	}
 }
 

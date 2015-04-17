@@ -1,7 +1,7 @@
 ﻿using System;
 using MEF.Infrastructure;
 
-namespace BTZ.Common
+namespace BTZ.Data
 {
 	/// <summary>
 	/// Stellt einen BTOS Benutzer dar
@@ -32,6 +32,7 @@ namespace BTZ.Common
 		/// Benutzerprofilbild
 		/// </summary>
 		/// <value>The avatar.</value>
+		[Ignore()]
 		public byte[] Avatar{ get; set; }
 
 		public string Token{ get; set; }

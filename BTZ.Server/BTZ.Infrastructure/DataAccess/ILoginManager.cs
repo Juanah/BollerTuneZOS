@@ -1,5 +1,6 @@
 ﻿using System;
 using BTZ.Common;
+using BTZ.Data;
 
 namespace BTZ.Infrastructure
 {

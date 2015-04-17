@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using BTZ.Common;
+using BTZ.Data;
 
 namespace BTZ.Infrastructure
 {

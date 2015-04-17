@@ -3,8 +3,7 @@ using BTZ.Communication;
 using BTZ.Common;
 using System.IO;
 using BTZ.Infrastructure;
-using Newtonsoft.Json;
-
+using TinyIoC;
 namespace BTZ.Core
 {
 	public class AppService : IAppService
@@ -14,6 +13,10 @@ namespace BTZ.Core
 
 		public AppService ()
 		{
+			_loginMessageProcessor = TinyIoCContainer.Current.Resolve<ILogInMessageProcessor> ();
+			if (_loginMessageProcessor == null) {
+				throw new ArgumentNullException ("LoginMessageProcessor");
+			}
 		}
 		
 

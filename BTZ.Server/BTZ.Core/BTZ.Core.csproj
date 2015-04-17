@@ -47,6 +47,7 @@
     <Compile Include="MessageProcessor\LogInMessageProcessor.cs" />
     <Compile Include="Login\LoginManager.cs" />
     <Compile Include="Hosts\BTZHosts.cs" />
+    <Compile Include="TinyIoC.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -71,6 +72,10 @@
     <ProjectReference Include="..\BTZ.Common\BTZ.Common.csproj">
       <Project>{AE9AA53D-62D8-4791-A58C-58525AD6A4EB}</Project>
       <Name>BTZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BTZ.Data\BTZ.Data.csproj">
+      <Project>{A3374A6A-986D-4305-9A6E-4E4F6E1570E5}</Project>
+      <Name>BTZ.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
