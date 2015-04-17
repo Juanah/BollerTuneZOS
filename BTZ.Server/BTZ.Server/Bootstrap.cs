@@ -12,8 +12,7 @@ namespace BTZ.Server
 		public void Register()
 		{
 
-			DatabaseHandler handler = new DatabaseHandler ();
-
+			TinyIoCContainer.Current.Register<DatabaseHandler> ().AsSingleton ();
 			TinyIoCContainer.Current.Register<IUserRepository,UserRepository> ().AsSingleton ();
 			TinyIoCContainer.Current.Register<ILoginManager,LoginManager> ().AsSingleton ();
 			TinyIoCContainer.Current.Register<ILogInMessageProcessor,LogInMessageProcessor> ().AsSingleton ();

@@ -17,14 +17,12 @@ namespace BTZ.DataAccess
 	{
 		List<User> _localUser;
 		ILog s_log = LogManager.GetLogger(typeof(UserRepository));
-		 static DatabaseHandler handler;
+		readonly DatabaseHandler handler;
 		/// <summary />
-		public UserRepository ()
+		public UserRepository (DatabaseHandler handler)
 		{
+			this.handler = handler;
 			_localUser = new List<User> ();
-			if (handler == null) {
-				handler = new DatabaseHandler ();
-			}
 		}
 		
 

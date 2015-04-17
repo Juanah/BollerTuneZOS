@@ -15,9 +15,9 @@ namespace BTZ.Core
 		private readonly ILog s_log = LogManager.GetLogger(typeof(LoginManager));
 
 
-		public LoginManager ()
+		public LoginManager (IUserRepository userRepo)
 		{
-			this._userRepository = new UserRepository ();
+			_userRepository = userRepo;
 			if (_userRepository == null) {
 				throw new ArgumentNullException ("UserRepository");
 			}
