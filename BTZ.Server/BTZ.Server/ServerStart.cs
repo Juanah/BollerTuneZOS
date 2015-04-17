@@ -1,5 +1,4 @@
 ﻿using System;
-using MEF.Core;
 using BTZ.Infrastructure;
 using BTZ.DataAccess;
 using log4net;

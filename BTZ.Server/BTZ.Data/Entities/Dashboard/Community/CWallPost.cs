@@ -1,5 +1,4 @@
 ﻿using System;
-using MEF.Infrastructure;
 
 namespace BTZ.Data
 {
@@ -9,7 +8,6 @@ namespace BTZ.Data
 		{
 		}
 
-		[ForeignKey(typeof(User))]
 		public User Owner{ get; set; }
 
 		/// <summary>

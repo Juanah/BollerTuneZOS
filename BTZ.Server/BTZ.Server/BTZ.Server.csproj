@@ -34,12 +34,6 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="MEF.Core">
-      <HintPath>..\..\..\MySQLEntity\bin\Debug\MEF.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MEF.Infrastructure">
-      <HintPath>..\..\..\MySQLEntity\bin\Debug\MEF.Infrastructure.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />

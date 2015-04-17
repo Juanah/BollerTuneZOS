@@ -1,6 +1,5 @@
 ﻿using System;
 using TinyIoC;
-using MEF.Core;
 using BTZ.Infrastructure;
 using BTZ.DataAccess;
 using BTZ.Core;
@@ -12,10 +11,18 @@ namespace BTZ.Server
 	{
 		public void Register()
 		{
-			TinyIoCContainer.Current.Register<IUserRepository,UserRepository> ();
-			TinyIoCContainer.Current.Register<ILoginManager,LoginManager> ();
-			TinyIoCContainer.Current.Register<ILogInMessageProcessor,LogInMessageProcessor> ();
+
+			DatabaseHandler handler = new DatabaseHandler ();
+
+			TinyIoCContainer.Current.Register<IUserRepository,UserRepository> ().AsSingleton ();
+			TinyIoCContainer.Current.Register<ILoginManager,LoginManager> ().AsSingleton ();
+			TinyIoCContainer.Current.Register<ILogInMessageProcessor,LogInMessageProcessor> ().AsSingleton ();
 			TinyIoCContainer.Current.Register<IBTZHosts,BTZHosts> ();
+
+			var userRepo = TinyIoCContainer.Current.Resolve<IUserRepository> ();
+
+			userRepo.AddUser (new BTZ.Data.User (){ Username = "XMAN"});
+
 		}
 	}
 }

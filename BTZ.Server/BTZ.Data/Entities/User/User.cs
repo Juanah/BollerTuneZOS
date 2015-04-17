@@ -1,5 +1,4 @@
 ﻿using System;
-using MEF.Infrastructure;
 
 namespace BTZ.Data
 {
@@ -32,7 +31,6 @@ namespace BTZ.Data
 		/// Benutzerprofilbild
 		/// </summary>
 		/// <value>The avatar.</value>
-		[Ignore()]
 		public byte[] Avatar{ get; set; }
 
 		public string Token{ get; set; }

@@ -1,12 +1,11 @@
 ﻿using System;
-using MEF.Infrastructure;
-using MEF.Core;
 using System.Collections.Generic;
 using System.Linq;
 using log4net;
 using BTZ.Common;
 using BTZ.Infrastructure;
 using BTZ.Data;
+using ServiceStack.OrmLite;
 
 namespace BTZ.DataAccess
 {
@@ -18,12 +17,14 @@ namespace BTZ.DataAccess
 	{
 		List<User> _localUser;
 		ILog s_log = LogManager.GetLogger(typeof(UserRepository));
-		DatabaseHandler _dbHandler;
+		 static DatabaseHandler handler;
 		/// <summary />
 		public UserRepository ()
 		{
-			_dbHandler = new DatabaseHandler ();
 			_localUser = new List<User> ();
+			if (handler == null) {
+				handler = new DatabaseHandler ();
+			}
 		}
 		
 
@@ -31,9 +32,10 @@ namespace BTZ.DataAccess
 		/// <summary />
 		public List<User> GetAllUser()
 		{
-			if (!_localUser.Any ()) {
-				UpdateUser ();
-			}
+
+			_localUser = handler.Database.LoadSelect<User> ();
+			Console.WriteLine (_localUser.Count);
+
 			return _localUser;
 		}
 		#endregion
@@ -43,14 +45,8 @@ namespace BTZ.DataAccess
 		/// <summary />
 		public void UpdateUser(User user)
 		{
-			
-			if (!_dbHandler.DbContext.Update<User> (user)) {
-				s_log.Error (String.Format ("Could not Update User {0}", user.Username));
-				return;
-			}
-			UpdateUser ();
+			handler.Database.Update<User> (user);
 			s_log.Info (String.Format ("Updated User {0}", user.Username));
-
 		}
 		/// <summary />
 		public void UpdateUsers(IList<User> users)
@@ -65,11 +61,7 @@ namespace BTZ.DataAccess
 		/// <summary />
 		public void DeleteUser(User user)
 		{
-			if (!_dbHandler.DbContext.Delete<User> (user)) {
-				s_log.Error (String.Format ("Could not delete User {0}", user.Username));
-				return;
-			}
-			UpdateUser ();
+			handler.Database.Delete<User> (user);
 			s_log.Info (String.Format ("Deleted User {0}", user.Username));
 		}
 		/// <summary />
@@ -85,8 +77,8 @@ namespace BTZ.DataAccess
 		/// <summary />
 		public void AddUser(User user)
 		{
+			handler.Database.Insert<User> (user);
 			s_log.Info (String.Format ("Added User {0}", user.Username));
-			_dbHandler.DbContext.Insert<User> (new User (){ Username = "HalloPenis", Password = "Welt23", Token = "123" });
 		}
 		/// <summary />
 		public void AddUsers(IList<User> users)
@@ -100,7 +92,7 @@ namespace BTZ.DataAccess
 		#region Member
 		void UpdateUser()
 		{
-			_localUser = _dbHandler.DbContext.GetTable<User> (typeof(User));
+			_localUser = handler.Database.LoadSelect<User> ();
 		}
 		#endregion
 	}
