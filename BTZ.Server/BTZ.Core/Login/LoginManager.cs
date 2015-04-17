@@ -4,6 +4,7 @@ using BTZ.Common;
 using System.Linq;
 using BTZ.Data;
 using log4net;
+using BTZ.DataAccess;
 
 namespace BTZ.Core
 {
@@ -16,7 +17,7 @@ namespace BTZ.Core
 
 		public LoginManager ()
 		{
-			this._userRepository = TinyIoC.TinyIoCContainer.Current.Resolve<IUserRepository> ();
+			this._userRepository = new UserRepository ();
 			if (_userRepository == null) {
 				throw new ArgumentNullException ("UserRepository");
 			}
