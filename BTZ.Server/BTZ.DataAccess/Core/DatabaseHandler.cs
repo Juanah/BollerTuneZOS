@@ -16,8 +16,8 @@ namespace BTZ.DataAccess
 		public DatabaseHandler ()
 		{
 			OrmLiteConfig.DialectProvider = MySqlDialectProvider.Instance;
-
-			Database = "Server = 127.0.0.1; Database = btz; Uid = root; Pwd =".OpenDbConnection ();
+			//1rmRg65%
+			Database = "Server = 127.0.0.1; Database = btz; Uid = appserver; Pwd = $xyz040123".OpenDbConnection ();
 			Database.CreateTable<User> ();
 
 		}

@@ -7,7 +7,7 @@ namespace BTZ.Common
 	/// Wird dem Client als antwort auf einen Login zurück gesendet
 	/// Jonas Ahlf 03.04.2015 22:50:04
 	/// </summary>
-	[DataContract]
+	[DataContract(IsReference = true)]
 	public class LoginResponse
 	{
 		[DataMember]

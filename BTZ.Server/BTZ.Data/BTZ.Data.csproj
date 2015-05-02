@@ -8,6 +8,8 @@
     <RootNamespace>BTZ.Data</RootNamespace>
     <AssemblyName>BTZ.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,23 +31,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="MySql.Data">
-      <HintPath>..\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\Lib\ServiceStack.Common.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\packages\ServiceStack.Interfaces.4.0.38\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.4.0.38\lib\net40\ServiceStack.Text.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Common">
-      <HintPath>..\packages\ServiceStack.Common.4.0.38\lib\net40\ServiceStack.Common.dll</HintPath>
+      <HintPath>..\..\Lib\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\packages\ServiceStack.OrmLite.4.0.38\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <HintPath>..\..\Lib\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite.MySql">
-      <HintPath>..\packages\ServiceStack.OrmLite.MySql.4.0.38\lib\net45\ServiceStack.OrmLite.MySql.dll</HintPath>
+      <HintPath>..\..\Lib\ServiceStack.OrmLite.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\Lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\Lib\MySql\v4.0\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

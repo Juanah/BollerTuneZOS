@@ -1,0 +1,4 @@
+﻿2015-04-17 20:38:48,661 [1] INFO  BTZ.DataAccess.UserRepository - Added User XMAN
+2015-04-17 20:38:48,687 [7] INFO  BTZ.Core.BTZHosts - Start Services...
+2015-04-17 20:38:48,745 [7] INFO  BTZ.Core.BTZHosts - AppService is going to start on http://localhost:56534/btz
+2015-04-17 20:38:48,863 [7] INFO  BTZ.Core.BTZHosts - AppService started on http://localhost:56534/btz
